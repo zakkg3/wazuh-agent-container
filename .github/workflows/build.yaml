@@ -9,8 +9,8 @@ on:
 
 env:
   IMAGE_TAGS: ${{  github.ref_name }}
-  IMAGE_REGISTRY: flag5
   IMAGE_NAMESPACE : wazuh-agent
+  IMAGE_REGISTRY: quay.io
 
 jobs:
   build-push-quay:
