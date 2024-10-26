@@ -11,6 +11,8 @@ env:
   IMAGE_TAGS: ${{  github.ref_name }}
   IMAGE_NAMESPACE : wazuh-agent
   IMAGE_REGISTRY: quay.io
+  REGISTRY_USER: flag5
+
 
 jobs:
   build-push-quay:
