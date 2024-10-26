@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
   apt-get install -y wazuh-agent=${AGENT_VERSION} && \
   rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install Jinja2==3.1.4 loguru==0.7.2 && \
+RUN pip3 install Jinja2==3.1.4 && \
   chmod +x /render-config.py && \
   apt-get clean autoclean && \
   apt-get autoremove -y && \
