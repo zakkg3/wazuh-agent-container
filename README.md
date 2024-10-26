@@ -10,6 +10,8 @@ We mount the root fs on /rootfs and on the config we specify the directories to 
 
 # run like this:
 
+[podman|docker] pull quay.io/flag5/wazuh-agent
+
 You can use podman or docker. they are compatible:
 
     podman run -d --name wazuh -v /:/rootfs:ro --net host --hostname ${HOSTNAME} \
@@ -21,4 +23,4 @@ You can use podman or docker. they are compatible:
         -e VIRUS_TOTAL_KEY=youtkeyhere \
         -v /etc/os-release:/etc/os-release \
         -v /var/ossec/local_internal_options.conf:/var/ossec/etc/local_internal_options.conf \
-        -v /var/ossec/client.keys:/var/ossec/etc/client.keys zakkg3/wazuh-agent-contianer
+        -v /var/ossec/client.keys:/var/ossec/etc/client.keys quay.io/flag5/wazuh-agent
