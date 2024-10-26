@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from loguru import logger
 from jinja2 import Template
 import os
 
 def create_config_file():
-    logger.info(f"Create Wazuh agent configuration for node {node_name}")
+    print(f"Create Wazuh agent configuration for node {node_name}")
     with open("ossec.jinja2") as file_:
         template = Template(file_.read(), autoescape=True)
         config = template.render(
@@ -18,7 +17,7 @@ def create_config_file():
     # open("/var/ossec/etc/local_internal_options.conf", "wb").write(
     #     open("local_internal_options.jinja2", "rb").read()
     # )
-    logger.info(
+    print(
         "Configuration has been generated from template."
     )
 
