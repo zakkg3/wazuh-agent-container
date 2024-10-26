@@ -3,7 +3,7 @@
     <server>
       <address>{{ join_manager_hostname }}</address>
       <port>{{ join_manager_port | default('1514', true) }}</port>
-      <!--protocol>tcp</protocol-->
+      <protocol>tcp</protocol>
     </server>
     <config-profile>ubuntu, ubuntu20, ubuntu20.04, ubuntu16, ubuntu16.04, centos, windows</config-profile>
     <notify_time>10</notify_time>
@@ -11,19 +11,6 @@
     <auto_restart>yes</auto_restart>
     <crypto_method>aes</crypto_method>
   </client>
-  <auth>
-    <disabled>no</disabled>
-    <remote_enrollment>yes</remote_enrollment>
-    <port>{{ join_manager_port | default('1514', true) }}</port>
-    <use_source_ip>no</use_source_ip>
-    <force>
-        <enabled>yes</enabled>
-        <disconnected_time enabled="no">0</disconnected_time>
-        <after_registration_time>0</after_registration_time>
-        <key_mismatch>yes</key_mismatch>
-        <purge>yes</purge>
-    </force>
-  </auth>
 
   <client_buffer>
     <!-- Agent buffer options -->

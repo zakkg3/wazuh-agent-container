@@ -3,7 +3,7 @@ from jinja2 import Template
 import os
 
 def create_config_file():
-    print(f"Create Wazuh agent configuration for node {node_name}")
+    print(f"Create Wazuh agent configuration for node")
     with open("ossec.jinja2") as file_:
         template = Template(file_.read(), autoescape=True)
         config = template.render(
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     if not join_manager_worker:
         os.environ["WAZUH_MANAGER"] = "wazuh-workers.wazuh.svc.cluster.local"
         join_manager_worker = "wazuh-workers.wazuh.svc.cluster.local"
-
+    create_config_file()
