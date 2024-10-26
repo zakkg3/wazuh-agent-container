@@ -1,9 +1,9 @@
 # Docker build images on tag
 name: Build&Push Images
-on: [push]
-  # push:
-    # tags:
-    #   - '*'
+on:
+  push:
+    tags:
+      - '*'
 #          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
 #          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
 
