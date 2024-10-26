@@ -46,7 +46,7 @@ jobs:
           tags: ${{ env.IMAGE_TAGS }} latest
           platforms: linux/386, linux/amd64, linux/s390x, linux/arm64/v8
           containerfiles: |
-            ./Dockerfile.gh
+            ./Dockerfile
 
       # Push the image manifest to Quay.io (Image Registry)
       - name: Push To Quay
