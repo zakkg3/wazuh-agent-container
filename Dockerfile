@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
 LABEL maintainer "zakkg3"
-ARG AGENT_VERSION="4.9.1-1"
+ARG AGENT_VERSION="4.10.0-1"
 LABEL description "Wazuh Agent"
 
 COPY entrypoint.sh ossec.jinja2 render-config.py /

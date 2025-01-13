@@ -1,4 +1,7 @@
 # wazuh-agent-container
+
+Current version 4.10.0
+
 Wazuh agent on a container. Wazuh Docker agent. 
 
 So here we render the config form the enviroment variables and then let the agent do the magic.
