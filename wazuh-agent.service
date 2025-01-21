@@ -11,6 +11,7 @@ After=wazuh-agent.service
 Environment=PODMAN_SYSTEMD_UNIT=%n
 #Restart=on-failure
 TimeoutStopSec=70
+SuccessExitStatus=143
 ExecStartPre=/usr/bin/touch /run/wazuh-agent.pod-id
 ExecStartPre=/bin/rm -f %t/%n.ctr-id
 ExecStart=/usr/bin/podman run --cidfile=%t/%n.ctr-id --cgroups=no-conmon --rm --pod-id-file %t/wazuh-agent.pod-id --sdnotify=conmon -d --replace --name=wazuh -v /:/rootfs:ro -v /etc/os-release:/etc/os-release --net host -e WAZUH_AGENT_NAME=%H -e WAZUH_MANAGER=10.205.213.4 -e WAZUH_REGISTRATION_PASSWORD='test123' -e WAZUH_MANAGER_PORT=55000 -e WAZUH_AGENT_GROUP='login' zakkg3/wazuh-agent-container
