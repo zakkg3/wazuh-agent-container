@@ -13,6 +13,15 @@ fi
 
 echo "background jobs running, listening for changes"
 
+cleanup()
+{
+  echo "Closing wazuh agent"
+  var/ossec/bin/wazuh-control stop
+  exit 0
+}
+
+trap cleanup EXIT
+
 while sleep 60; do
   /var/ossec/bin/wazuh-control status > /dev/null 2>&1
   status=$?
@@ -21,3 +30,4 @@ while sleep 60; do
     exit 1
   fi
 done
+
